@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { storage } from "./firebase/firebase-config";
+import { storage } from "../firebase/firebase-config";
 import { ref, getDownloadURL, listAll, getMetadata } from "firebase/storage";
 import { format } from "date-fns";
 

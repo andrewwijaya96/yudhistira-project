@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
 import { AiFillFilePdf } from "react-icons/ai";
-import { storage } from "../firebase/firebase-config";
+import { storage } from "../../firebase/firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 
