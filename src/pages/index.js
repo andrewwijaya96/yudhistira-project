@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { storage } from "../firebase/firebase-config";
 import { ref, getDownloadURL, listAll, getMetadata } from "firebase/storage";
@@ -44,42 +42,48 @@ export default function Dashboard() {
     });
   }, []);
 
-  const sortByTimeCreated = () => {
-    console.log("yes");
-    const sortedList = [...fileList].sort((a, b) => {
-      return new Date(b.timeCreated) - new Date(a.timeCreated);
-    });
-    setFileList(sortedList);
-  };
+  // const sortByTimeCreated = () => {
+  //   console.log("yes");
+  //   const sortedList = [...fileList].sort((a, b) => {
+  //     return new Date(b.timeCreated) - new Date(a.timeCreated);
+  //   });
+  //   setFileList(sortedList);
+  // };
 
   return (
-    <div>
-      <h1 className="ml-24 text-3xl my-6">Daftar SOP</h1>
-      <button onClick={sortByTimeCreated}>Order</button>
-      <div className="flex justify-center flex-col items-center">
-        <div className="grid grid-cols-6 w-5/6 bg-gray-100">
-          <span className="col-span-3">Nama</span>
-          <span className="col-span-1">Versi</span>
-          <span className="col-span-1">Tanggal Upload</span>
-          <span className="col-span-1">Aksi</span>
-        </div>
-        {fileList.map((item) => {
-          return (
-            <div key={item.name} className="grid grid-cols-6 w-5/6 my-2">
-              <span className="col-span-3">{item.sopName}</span>
-              <span className="col-span-1">{item.fileVersion}</span>
-              <span className="col-span-1">{item.timeCreated}</span>
-              <span className="col-span-1">
-                <a
-                  href={item.url}
-                  className="hover:text-sky-400 hover:cursor-pointer"
-                >
-                  download
-                </a>
-              </span>
-            </div>
-          );
-        })}
+    <div className="items-center bg-stone-700 h-screen text-white py-6">
+      <h1 className="text-center text-3xl my-6">Daftar SOP</h1>
+      {/* <button onClick={sortByTimeCreated}>Order</button> */}
+      <div className="flex justify-center">
+        <table className="table w-9/12 p-4">
+          <thead className="table-header-group">
+            <tr className="table-row border-b">
+              <td className="table-cell px-6 py-3">Nama</td>
+              <td className="table-cell px-6 py-3">Versi</td>
+              <td className="table-cell px-6 py-3">Tanggal Upload</td>
+              <td className="table-cell px-6 py-3">Aksi</td>
+            </tr>
+          </thead>
+          <tbody className="table-row-group">
+            {fileList.map((item) => {
+              return (
+                <tr key={item.name} className="table-row border-b">
+                  <td className="table-cell px-6 py-4">{item.sopName}</td>
+                  <td className="table-cell px-6 py-4">{item.fileVersion}</td>
+                  <td className="table-cell px-6 py-4">{item.timeCreated}</td>
+                  <td className="table-cell px-6 py-4">
+                    <a
+                      href={item.url}
+                      className="hover:text-sky-400 hover:cursor-pointer underline"
+                    >
+                      download
+                    </a>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );

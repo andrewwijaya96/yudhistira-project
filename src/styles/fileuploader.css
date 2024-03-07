@@ -7,9 +7,9 @@
 
 .file-uploader-form input[type="text"] {
   flex: 1; /* Grow to fill available space */
-  width: 450px; /* Set maximum width for the input */
+  /* width: 450px; Set maximum width for the input */
   height: 40px;
-  margin-right: 8px; /* Add space between input and button */
+  margin-right: 0px; /* Add space between input and button */
 }
 
 .file-uploader-form button[type="submit"] {
