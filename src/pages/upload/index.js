@@ -71,8 +71,8 @@ export default function Uploader() {
   };
 
   return (
-    <main>
-      <div className="form-bok">
+    <main className=" flex flex-col items-center">
+      <div className="form-bok w-9/12 align-center justify-center mt-5">
         <form
           action=""
           onClick={() => document.querySelector(".input-field").click()}
@@ -97,7 +97,7 @@ export default function Uploader() {
           )}
         </form>
       </div>
-      <section className="uploaded-row">
+      <section className="uploaded-row w-9/12 align-baseline">
         <AiFillFilePdf color="#1475cf" />
         <span className="upload-content">
           {fileName} -

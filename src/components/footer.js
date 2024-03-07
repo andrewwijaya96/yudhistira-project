@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <p>footer</p>;
+  return <footer>Yudhistira@2024</footer>;
 }
