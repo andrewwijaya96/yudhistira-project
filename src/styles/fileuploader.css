@@ -1,0 +1,20 @@
+.file-uploader-form {
+  display: flex;
+  align-items: baseline; /* Align items vertically */
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.file-uploader-form input[type="text"] {
+  flex: 1; /* Grow to fill available space */
+  width: 450px; /* Set maximum width for the input */
+  height: 40px;
+  margin-right: 8px; /* Add space between input and button */
+}
+
+.file-uploader-form button[type="submit"] {
+  /* You can add additional styling to the button if needed */
+  /* color: #1475cf; */
+  width: 80px; /* Set maximum width for the input */
+  height: 40px;
+}
